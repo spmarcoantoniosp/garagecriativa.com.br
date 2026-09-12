@@ -7,14 +7,14 @@ Total: **14 registros**.
 
 ---
 
-## A · site (4 registros, nome vazio ou @)
+## A · site (4 registros) — **campo Nome VAZIO**
 
 | Nome | Valor |
 |---|---|
-| @ | 185.199.108.153 |
-| @ | 185.199.109.153 |
-| @ | 185.199.110.153 |
-| @ | 185.199.111.153 |
+| *(vazio)* | 185.199.108.153 |
+| *(vazio)* | 185.199.109.153 |
+| *(vazio)* | 185.199.110.153 |
+| *(vazio)* | 185.199.111.153 |
 
 ## CNAME · www (1)
 
@@ -22,24 +22,24 @@ Total: **14 registros**.
 |---|---|
 | www | spmarcoantoniosp.github.io. |
 
-## MX · e-mail Google Workspace (5) — **os mais críticos**
+## MX · e-mail Google Workspace (5) — **campo Nome VAZIO** · os mais críticos
 
 | Nome | Prioridade | Valor |
 |---|---|---|
-| @ | 1 | aspmx.l.google.com. |
-| @ | 5 | alt1.aspmx.l.google.com. |
-| @ | 5 | alt2.aspmx.l.google.com. |
-| @ | 10 | alt3.aspmx.l.google.com. |
-| @ | 10 | alt4.aspmx.l.google.com. |
+| *(vazio)* | 1 | aspmx.l.google.com. |
+| *(vazio)* | 5 | alt1.aspmx.l.google.com. |
+| *(vazio)* | 5 | alt2.aspmx.l.google.com. |
+| *(vazio)* | 10 | alt3.aspmx.l.google.com. |
+| *(vazio)* | 10 | alt4.aspmx.l.google.com. |
 
 ## TXT (4)
 
-**SPF** — nome `@`
+**SPF** — campo Nome **vazio**
 ```
 v=spf1 include:_spf.google.com ~all
 ```
 
-**Verificação do Google** — nome `@`
+**Verificação do Google** — campo Nome **vazio**
 ```
 google-site-verification=aLA3BZbg3nDxK_LRfG0ck5WKBSI3vDvm5ydTrgDnroM
 ```
@@ -78,6 +78,13 @@ google._domainkey    IN  TXT   "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ
 ```
 
 ---
+
+## ⚠️ No painel do Registro.br
+
+O campo **Nome** da raiz fica **em branco** — não aceita `@`, nem aspas, nem o
+nome do domínio. Só `www`, `_dmarc` e `google._domainkey` levam texto.
+
+Valores de TXT: cole **sem aspas**.
 
 ## Ordem segura
 
