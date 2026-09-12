@@ -1,0 +1,15 @@
+# Procedência das imagens — site Garage
+# arquivo | vaga | fonte | id/arquivo original | licenca
+# Recorte da vaga B exclui a marca do fabricante visivel no aparelho.
+
+cases-abertura.jpg | vaga A | pexels | pexels-connorscottmcmanus-12797275.jpg | Pexels License
+tres-tempos.jpg | vaga B | unsplash | ralph-hutter-xLs4XSQmxtE-unsplash.jpg | Ralph Hutter | Unsplash License
+hub-metodo.jpg | vaga C | pexels | pexels-karola-g-4219148.jpg | Pexels License
+workshops.jpg | vaga D | pexels | pexels-birgitboellinger-31158458.jpg | Pexels License
+textura.jpg | vaga E | pexels | pexels-frans-van-heerden-201846-632470.jpg | Pexels License
+case-fecho.jpg | vaga F | pexels | pexels-skylar-kang-6378160.jpg | Pexels License
+
+Tratamento: duotone Garage (#17110E -> #E8DCD0), recorte e reducao. Originais nao alterados.
+Uso: ilustrativo. Nenhuma destas imagens registra trabalho da Garage e nenhuma recebe legenda
+que a atribua a um projeto. Registro real de projeto entra separado, com legenda datada.
+Criterio aplicado: sem rosto identificavel, sem marca ou texto legivel.

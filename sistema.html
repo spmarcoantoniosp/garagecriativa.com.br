@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sistema de design · Garage</title>
+<meta name="description" content="Tokens, componentes, padrões e sistema de movimento do site da Garage. Documentação viva do design system.">
+<link rel="canonical" href="https://www.garagecriativa.com.br/sistema.html">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+<link rel="icon" href="assets/favicon-512.png" sizes="512x512">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<meta property="og:title" content="Sistema de design · Garage">
+<meta property="og:description" content="Tokens, componentes, padrões e sistema de movimento do site da Garage. Documentação viva do design system.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.garagecriativa.com.br/sistema.html">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Garage">
+<meta property="og:image" content="https://www.garagecriativa.com.br/assets/og-garage.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.garagecriativa.com.br/assets/og-garage.png">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#17110E">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/cooper-hewitt-latin-700-normal.woff2" crossorigin>
+<link rel="stylesheet" href="assets/garage.css">
+</head>
+<body>
+<a class="skip" href="#main">Ir para o conteúdo</a>
+<div class="dusk"></div>
+
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="nav__logo" href="index.html" aria-label="Garage"><img src="assets/logo/gc-horizontal-negativo.svg" alt="Garage" width="158" height="44"></a>
+    <nav aria-label="Principal">
+      <ul class="nav__links">
+        <li><a href="workshops.html">Workshops</a></li>
+        <li><a href="hub.html">Consultoria</a></li>
+        <li><a href="cases.html">Cases</a></li>
+        <li><a href="index.html#formato">Três Tempos</a></li>
+        <li><a href="workshops.html#mentoria">Mentoria</a></li>
+      </ul>
+    </nav>
+    <a class="nav__cta" href="index.html#contato">Traga seu desafio</a>
+    <button class="nav__burger" type="button" aria-expanded="false"
+            aria-controls="nav-panel" aria-label="Abrir menu"><span></span></button>
+  </div>
+  <div class="nav__panel" id="nav-panel">
+    <ul>
+      <li><a href="workshops.html">Workshops</a></li>
+      <li><a href="hub.html">Consultoria</a></li>
+      <li><a href="cases.html">Cases</a></li>
+      <li><a href="index.html#formato">Três Tempos</a></li>
+      <li><a href="workshops.html#mentoria">Mentoria</a></li>
+    </ul>
+    <a class="nav__panel-cta" href="index.html#contato">Traga seu desafio</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="lbl lbl--acc">Documentação interna · V4</span>
+      <h1 class="d1">Sistema de design da Garage.</h1>
+      <p class="lede">Não é um catálogo de enfeites. São as decisões que já foram tomadas, para que não sejam tomadas de novo a cada página. Quem for construir uma peça nova — site, deck, infográfico, post — começa por aqui.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="visline" role="separator">
+      <span class="visline__tag">Linha de visibilidade</span>
+      <span class="visline__tag visline__tag--end">assinatura do sistema</span>
+    </div>
+  </div>
+
+  <!-- PRINCÍPIOS -->
+  <section class="lane">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="lbl">01</span><h2 class="d2">Quatro princípios.</h2></div>
+        <p class="lede">Toda decisão de componente ou de peça nova é resolvida por um destes quatro. Se nenhum resolve, é caso de estender o sistema, não de improvisar.</p>
+      </div>
+      <div class="spec"><span class="spec__k">Escuro é o chão</span><span class="spec__v">O escuro é a superfície padrão — home, aberturas, capas, cabeçalho e rodapé. O claro é a <b>mesa de leitura</b>: corpo de case, corpo de artigo, formulário. Proporção de referência: <code>~80% escuro</code>. Nunca usar claro só para "variar".</span></div>
+      <div class="spec"><span class="spec__k">Cor tem função</span><span class="spec__v">Violeta é Criativa, âmbar é Hub, tijolo é matéria. Cor não distingue itens de uma mesma família — cinco situações do Hub recebem <b>um marcador só</b>, porque são cinco instâncias da mesma coisa. Se quatro coisas do mesmo tipo precisam de quatro cores, o problema é de hierarquia, não de paleta.</span></div>
+      <div class="spec"><span class="spec__k">Hierarquia por peso</span><span class="spec__v">A ordem de leitura é construída por <b>família e peso tipográfico</b>, não por cor. Isso é o que impede a página de virar carnaval com três marcas na mesma tela.</span></div>
+      <div class="spec"><span class="spec__k">Movimento revela</span><span class="spec__v">O movimento existe para mostrar estrutura — uma linha que se traça, uma raia que preenche, um número que conta. Nunca para chamar atenção. Uma direção, uma curva, uma vez só.</span></div>
+    </div>
+  </section>
+
+  <!-- COR -->
+  <section class="lane lane--full">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="lbl">02</span><h2 class="d2">Cor.</h2></div>
+        <p class="lede">As duas marcas puras (#8278FF e #FFAA32) são <b>acento</b>, não superfície: branco sobre elas reprova em contraste. Para superfície com texto branco existem as versões aprofundadas.</p>
+      </div>
+      <div class="toks">
+        <div class="tok"><span class="tok__chip" style="background:#17110E;outline:1px solid #33271F"></span><span class="tok__n">--char</span><span class="tok__v">#17110E</span><span class="tok__u">Chão. Carvão com tijolo dentro, não preto neutro.</span></div>
+        <div class="tok"><span class="tok__chip" style="background:#221A15"></span><span class="tok__n">--char-up</span><span class="tok__v">#221A15</span><span class="tok__u">Superfície elevada: cards, blocos, painéis.</span></div>
+        <div class="tok"><span class="tok__chip" style="background:#8278FF"></span><span class="tok__n">--cri</span><span class="tok__v">#8278FF</span><span class="tok__u">Garage Criativa. Só acento: régua, rótulo, borda.</span></div>
+        <div class="tok"><span class="tok__chip" style="background:#6C60EE"></span><span class="tok__n">--cri-deep</span><span class="tok__v">#6C60EE · 4,62:1</span><span class="tok__u">Superfície Criativa. Aceita texto branco.</span></div>
+        <div class="tok"><span class="tok__chip" style="background:#FFAA32"></span><span class="tok__n">--hub</span><span class="tok__v">#FFAA32</span><span class="tok__u">Garage Hub. Só acento. Branco em cima reprova (1,9:1).</span></div>
+        <div class="tok"><span class="tok__chip" style="background:#9C5233"></span><span class="tok__n">--hub-deep / --brick</span><span class="tok__v">#9C5233 · 5,72:1</span><span class="tok__u">Superfície Hub e cor da matéria. Aceita texto branco.</span></div>
+        <div class="tok"><span class="tok__chip" style="background:#D8CCC2"></span><span class="tok__n">--bone</span><span class="tok__v">#D8CCC2</span><span class="tok__u">Marcador neutro, quando itens são da mesma família.</span></div>
+        <div class="tok"><span class="tok__chip" style="background:#F5F1ED"></span><span class="tok__n">--paper</span><span class="tok__v">#F5F1ED</span><span class="tok__u">Mesa de leitura. Corpo de case, artigo, formulário.</span></div>
+      </div>
+      <p class="ctx" style="margin-top:34px"><span>texto secundário no escuro <b>#A2938A</b></span> &nbsp;·&nbsp; <span>lede <b>#D8CCC2</b></span> &nbsp;·&nbsp; <span>piso de contraste <b>4,5:1</b> em qualquer texto abaixo de 24px</span></p>
+    </div>
+  </section>
+
+  <!-- TIPOGRAFIA -->
+  <section class="lane">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="lbl">03</span><h2 class="d2">Tipografia.</h2></div>
+        <p class="lede">Três famílias com papéis fixos. Cooper Hewitt afirma, Newsreader explica, Plex Mono anota. Nenhuma delas troca de papel.</p>
+      </div>
+      <table class="tbl">
+        <thead><tr><th>Papel</th><th>Família</th><th>Escala</th><th>Regra</th></tr></thead>
+        <tbody>
+          <tr><td><b>Display 1</b></td><td>Cooper Hewitt 700</td><td><code>clamp(33px, 4.6vw, 58px)</code></td><td>Um por página. Máximo 20ch.</td></tr>
+          <tr><td><b>Display 2</b></td><td>Cooper Hewitt 700</td><td><code>clamp(25px, 3vw, 39px)</code></td><td>Título de seção.</td></tr>
+          <tr><td><b>Display 3</b></td><td>Cooper Hewitt 700</td><td><code>clamp(20px, 2.1vw, 27px)</code></td><td>Título de bloco.</td></tr>
+          <tr><td><b>Lede</b></td><td>Newsreader 400</td><td><code>clamp(17,5px, 1.55vw, 20,5px)</code></td><td>Parágrafo de abertura. Máximo 56ch.</td></tr>
+          <tr><td><b>Corpo escuro</b></td><td>Cooper Hewitt <b>500</b></td><td>17,5px / 1.55</td><td>Peso 500 no escuro: traço fino sofre halação.</td></tr>
+          <tr><td><b>Corpo claro</b></td><td>Cooper Hewitt 400</td><td>17,5px / 1.55</td><td>Volta para 400 na mesa de leitura.</td></tr>
+          <tr><td><b>Prosa de case</b></td><td>Newsreader 400</td><td>18px / 1.62</td><td>Máximo 68ch.</td></tr>
+          <tr><td><b>Rótulo</b></td><td>Plex Mono 500</td><td>13px · <code>letter-spacing .14em</code></td><td><b>Piso de 13px.</b> Mono espaçado abaixo disso não se lê.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- MOVIMENTO -->
+  <section class="lane lane--full" data-brand="hub">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="lbl lbl--acc">04</span><h2 class="d2">Movimento.</h2></div>
+        <p class="lede">O vocabulário de movimento é o de quem desenha um blueprint: linha que se traça, raia que preenche, número que conta. Nada flutua, nada quica, nada gira.</p>
+      </div>
+      <table class="tbl">
+        <thead><tr><th>Token</th><th>Valor</th><th>Onde</th></tr></thead>
+        <tbody>
+          <tr><td><code>--mo-in</code></td><td>520ms</td><td>Entrada de qualquer elemento na viewport.</td></tr>
+          <tr><td><code>--mo-ui</code></td><td>180ms</td><td>Resposta de interface: hover, foco, cabeçalho.</td></tr>
+          <tr><td><code>--mo-line</code></td><td>900ms</td><td>Traço de linha e barra de crepúsculo.</td></tr>
+          <tr><td><code>--mo-ease</code></td><td><code>cubic-bezier(.2,.7,.2,1)</code></td><td>Curva única do sistema. Não existe segunda.</td></tr>
+          <tr><td><code>--mo-shift</code></td><td>14px, de baixo para cima</td><td>Direção única. Duas direções viram ruído.</td></tr>
+          <tr><td><code>--mo-step</code></td><td>65ms, teto de 8 itens</td><td>Escalonamento entre irmãos do mesmo container.</td></tr>
+        </tbody>
+      </table>
+      <div class="spec" style="margin-top:40px"><span class="spec__k">Uma vez só</span><span class="spec__v">Elemento que entra é desobservado. Reanimar ao rolar de volta cansa e faz a página parecer instável.</span></div>
+      <div class="spec"><span class="spec__k">Proibido</span><span class="spec__v">Escala, rotação, quique, paralaxe, flutuação contínua, carrossel automático. É linguagem de portfólio de motion, não de consultoria.</span></div>
+      <div class="spec"><span class="spec__k">Degradação</span><span class="spec__v">Sob <code>prefers-reduced-motion: reduce</code> ou sem JavaScript, tudo nasce visível. O movimento é camada, nunca condição de leitura.</span></div>
+      <div class="spec"><span class="spec__k">Marcação</span><span class="spec__v">Zero atributo de animação no HTML. O <code>motion.js</code> etiqueta por seletor. Peça nova entra no sistema adicionando um seletor, não editando markup.</span></div>
+    </div>
+  </section>
+
+  <!-- COMPONENTES -->
+  <section class="lane">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="lbl">05</span><h2 class="d2">Componentes.</h2></div>
+        <p class="lede">Estado de maturidade de cada peça do sistema. "Documentado" significa que tem variantes, estados e regra de uso escritos — não só que existe no CSS.</p>
+      </div>
+      <table class="tbl">
+        <thead><tr><th>Componente</th><th>Variantes</th><th>Estados</th><th>Situação</th></tr></thead>
+        <tbody>
+          <tr><td><b>Botão</b> <code>.btn</code></td><td>sólido, fantasma, sobre papel</td><td>padrão, hover, foco</td><td>Falta desabilitado e carregando</td></tr>
+          <tr><td><b>Linha de visibilidade</b> <code>.visline</code></td><td>escuro, sobre papel, com e sem rótulo</td><td>traçando, traçada</td><td>Completo — é a assinatura</td></tr>
+          <tr><td><b>Bloco chapado</b> <code>.slab</code></td><td>criativa, hub</td><td>preenchendo, preenchido</td><td>Completo</td></tr>
+          <tr><td><b>Linha de workshop</b> <code>.wcard</code></td><td>por trilha</td><td>padrão, hover, foco</td><td>Completo</td></tr>
+          <tr><td><b>Linha de case</b> <code>.case</code></td><td>publicado, em preparação</td><td>padrão, hover, foco, inerte</td><td>Completo</td></tr>
+          <tr><td><b>Porta</b> <code>.door</code></td><td>criativa, in-company, hub</td><td>padrão, hover</td><td>Completo</td></tr>
+          <tr><td><b>Cartão de contexto</b> <code>.trilha</code></td><td>por trilha, neutro</td><td>padrão</td><td>Falta hover</td></tr>
+          <tr><td><b>Painel de prova</b> <code>.proof</code></td><td>único</td><td>contando, contado</td><td>Completo</td></tr>
+          <tr><td><b>Formulário</b> <code>.form</code></td><td>workshop, consultoria</td><td>padrão, foco, inválido</td><td><b>Pendente:</b> endpoint real; hoje envia por e-mail</td></tr>
+          <tr><td><b>Navegação</b> <code>.nav</code></td><td>desktop, celular</td><td>topo, fixo, menu aberto</td><td>Completo</td></tr>
+          <tr><td><b>Prancha conceitual</b> <code>.prancha</code></td><td>por case</td><td>rolagem horizontal no celular</td><td>Uma feita (INRAD). Quatro pendentes</td></tr>
+          <tr><td><b>Banda de foto</b> <code>.band</code></td><td>tall, mid, low, sobre papel</td><td>padrão</td><td>Completo. Imagem de banco nunca recebe legenda de projeto</td></tr>
+          <tr><td><b>Marca</b></td><td>Criativa (SVG), Hub (tipográfico)</td><td>—</td><td><b>Pendente:</b> SVG do Hub e marca-mãe Garage</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DÍVIDA -->
+  <section class="lane lane--paper">
+    <div class="wrap">
+      <div class="visline visline--onPaper" aria-hidden="true" style="margin-bottom:var(--lane)"></div>
+      <div class="head">
+        <div><span class="lbl">06</span><h2 class="d2">Dívida aberta do sistema.</h2></div>
+        <p class="lede">O que está documentado como pendência não é falha — é decisão que ainda não foi tomada. O que não está documentado, sim.</p>
+      </div>
+      <div class="doors">
+        <div class="door door--hub">
+          <h3>Marca do Hub</h3>
+          <p>O cabeçalho do Hub usa lockup tipográfico provisório porque o SVG não existe. Enquanto isso, a página do Hub não pode assinar como Garage Criativa.</p>
+          <span class="door__go">Depende de asset</span>
+        </div>
+        <div class="door door--cri">
+          <h3>Campos comerciais</h3>
+          <p>Carga horária, formato e número de encontros existem. Investimento, próxima turma e certificação não. Sem eles o comprador não pré-qualifica.</p>
+          <span class="door__go">Depende de decisão</span>
+        </div>
+        <div class="door door--brick">
+          <h3>Endpoint de formulário</h3>
+          <p>Os dois formulários validam e abrem o cliente de e-mail. É solução provisória: a captura real precisa de endpoint com registro.</p>
+          <span class="door__go">Depende de execução</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <img src="assets/logo/gc-horizontal-negativo.svg" alt="Garage" width="180" height="40">
+        <p style="color:#C3B6AD;font-weight:400;max-width:32ch;margin:0">Formação e consultoria em design de serviço. São Paulo, desde 2016.</p>
+        <div class="foot__social">
+        <a href="https://www.instagram.com/garagecriativa/" aria-label="Instagram" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.6.22 1 .48 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c0 1.2-.2 1.8-.4 2.2a3.7 3.7 0 0 1-.9 1.4c-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2 0-1.8-.2-2.2-.4a3.7 3.7 0 0 1-1.4-.9 3.7 3.7 0 0 1-.9-1.4c-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c0-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.8.07-1.1.05-1.7.24-2.1.4-.5.2-.9.44-1.2.78-.34.33-.57.7-.78 1.2-.16.4-.35 1-.4 2.1C2.7 9.8 2.7 10.2 2.7 12s0 2.2.07 3.5c.05 1.1.24 1.7.4 2.1.2.5.44.9.78 1.2.33.34.7.57 1.2.78.4.16 1 .35 2.1.4 1.3.07 1.7.07 4.8.07s3.5 0 4.8-.07c1.1-.05 1.7-.24 2.1-.4.5-.2.9-.44 1.2-.78.34-.33.57-.7.78-1.2.16-.4.35-1 .4-2.1.07-1.3.07-1.7.07-3.5s0-2.2-.07-3.5c-.05-1.1-.24-1.7-.4-2.1a3 3 0 0 0-.78-1.2 3 3 0 0 0-1.2-.78c-.4-.16-1-.35-2.1-.4C15.5 4 15.1 4 12 4Zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 8a3.1 3.1 0 1 0 0-6.2 3.1 3.1 0 0 0 0 6.2Zm6.2-8.2a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0Z"/></svg></a>
+        <a href="https://www.linkedin.com/company/15260165/" aria-label="LinkedIn" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm6.5 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21 8.65 22 10.9 22 14.1V21h-4v-6.1c0-1.45-.03-3.3-2-3.3-2 0-2.3 1.57-2.3 3.2V21h-4V9Z"/></svg></a>
+        <a href="https://www.youtube.com/c/GarageCriativa" aria-label="YouTube" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.25 5 12 5 12 5s-6.25 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.76 1.77C5.75 19 12 19 12 19s6.25 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77C22 15.2 22 12 22 12s0-3.2-.4-4.8ZM10 15.2V8.8l5.2 3.2-5.2 3.2Z"/></svg></a>
+        </div>
+      </div>
+      <div><h5>Criativa</h5><ul>
+        <li><a href="workshops.html">Onze workshops</a></li>
+        <li><a href="index.html#formato">Três Tempos</a></li>
+        <li><a href="workshops.html#mentoria">Mentoria</a></li>
+      </ul></div>
+      <div><h5>Hub</h5><ul>
+        <li><a href="hub.html">Consultoria</a></li>
+        <li><a href="hub.html#metodo">Método</a></li>
+        <li><a href="cases.html">Cases</a></li>
+      </ul></div>
+      <div><h5>Contato</h5><ul>
+        <li><a href="https://wa.me/5511944828226" rel="noopener" target="_blank">WhatsApp (11) 94482-8226</a></li>
+        <li><a href="mailto:facilitadores@garagecriativa.com.br">facilitadores@garagecriativa.com.br</a></li>
+      </ul></div>
+    </div>
+    <div class="foot__legal"><span>© 2026 Garage · São Paulo</span><span>garagecriativa.com.br</span></div>
+  </div>
+</footer>
+<a class="wa" href="https://wa.me/5511944828226" target="_blank" rel="noopener noreferrer" aria-label="Falar com a Garage no WhatsApp">
+  <span class="wa__t">Falar no WhatsApp</span>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.74-.86-2.01-.96-.27-.1-.47-.15-.66.15-.2.3-.76.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.66-1.6-.9-2.19-.24-.57-.48-.5-.66-.5l-.56-.01c-.2 0-.51.07-.78.37-.27.3-1.02 1-1.02 2.43s1.05 2.82 1.2 3.02c.15.2 2.06 3.15 5 4.42.7.3 1.24.48 1.67.62.7.22 1.34.19 1.84.12.56-.09 1.74-.71 1.98-1.4.25-.69.25-1.28.17-1.4-.07-.13-.27-.2-.56-.35M12.05 21.7h-.02a9.6 9.6 0 0 1-4.9-1.34l-.35-.21-3.64.96.97-3.55-.23-.36a9.58 9.58 0 0 1-1.47-5.12c0-5.3 4.32-9.6 9.63-9.6a9.56 9.56 0 0 1 6.8 2.82 9.5 9.5 0 0 1 2.82 6.79c0 5.3-4.32 9.61-9.61 9.61M20.5 3.5A11.9 11.9 0 0 0 12.05.02C5.46.02.1 5.38.1 11.97c0 2.1.55 4.16 1.6 5.98L0 24l6.2-1.63a11.93 11.93 0 0 0 5.85 1.5h.01c6.58 0 11.94-5.36 11.95-11.95a11.87 11.87 0 0 0-3.5-8.42"/></svg>
+</a>
+<script src="assets/motion.js" defer></script>
+</body>
+</html>
