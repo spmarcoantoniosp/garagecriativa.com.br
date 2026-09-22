@@ -13,9 +13,18 @@ NAV = [
     ("Workshops",   "workshops.html",        "workshops"),
     ("Consultoria", "hub.html",              "hub"),
     ("Cases",       "cases.html",            "cases"),
-    ("Três Tempos", "index.html#formato",    None),
+    ("3 Tempos",    "index.html#formato",    None),
     ("Mentoria",    "workshops.html#mentoria", None),
+    ("Loja",        "https://www.garagelab.com.br", None),
 ]
+
+# A que mundo cada item pertence. O menu colore por aqui: Criativa, Hub e a
+# loja (Garage Labs, outro domínio) são coisas diferentes e devem ler assim.
+MUNDO = {
+    "Workshops": "cri", "3 Tempos": "cri", "Mentoria": "cri",
+    "Consultoria": "hub", "Cases": "hub",
+    "Loja": "lab",
+}
 
 SOCIAL = [
     ("Instagram", "https://www.instagram.com/garagecriativa/",
@@ -48,7 +57,7 @@ HEAD_TPL = """<!DOCTYPE html>
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="{site}/assets/og-garage.png">
-<meta name="theme-color" content="#17110E">
+{robots}<meta name="theme-color" content="#17110E">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/cooper-hewitt-latin-700-normal.woff2" crossorigin>
 <link rel="stylesheet" href="assets/garage.css">
 {schema}</head>
@@ -66,8 +75,9 @@ def header(page, cta_href):
     items_d, items_m = [], []
     for label, href, key in NAV:
         cur = ' aria-current="page"' if key and key == page else ''
-        items_d.append('        <li><a href="%s"%s>%s</a></li>' % (href, cur, label))
-        items_m.append('      <li><a href="%s"%s>%s</a></li>' % (href, cur, label))
+        w = ' data-w="%s"' % MUNDO[label] if label in MUNDO else ''
+        items_d.append('        <li><a href="%s"%s%s>%s</a></li>' % (href, w, cur, label))
+        items_m.append('      <li><a href="%s"%s%s>%s</a></li>' % (href, w, cur, label))
     return """<a class="skip" href="#main">Ir para o conteúdo</a>
 <div class="dusk"></div>
 
@@ -142,6 +152,37 @@ ORG = ('<script type="application/ld+json">\n{"@context":"https://schema.org","@
        '"subOrganization":[{"@type":"Organization","name":"Garage Criativa","description":"Escola de inovação — formação in-company em design de serviço, produto e agilidade."},'
        '{"@type":"Organization","name":"Garage Hub","description":"Consultoria de design de serviço e inovação organizacional."}]}\n</script>\n') % (SITE, MAIL, SITE)
 
+# JSON-LD específico de página. Cada bloco reproduz, byte a byte, o que já está
+# publicado — mexer aqui é mexer no que o Google lê.
+ROBOTS_NOINDEX = '<meta name="robots" content="noindex,nofollow">\n'
+
+SERVICE_HUB = """<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"Consultoria de design de servico","serviceType":"Design de servico e inovacao organizacional","provider":{"@type":"Organization","name":"Garage Hub","url":"https://www.garagecriativa.com.br/hub"},"areaServed":{"@type":"Country","name":"Brasil"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Metodo em seis etapas","itemListElement":[
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pesquisar"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Definir"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Idear"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Prototipar"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Testar"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Entregar"}}]}}
+</script>
+"""
+
+COURSE_LIST = """<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"Workshops in-company Garage Criativa","numberOfItems":11,"itemListElement":[
+{"@type":"ListItem","position":1,"item":{"@type":"Course","name":"IA Design Thinking","description":"Enquadramento do problema antes do investimento.","provider":{"@type":"Organization","name":"Garage Criativa"},"hasCourseInstance":{"@type":"CourseInstance","courseMode":"blended","courseWorkload":"PT13H"}}},
+{"@type":"ListItem","position":2,"item":{"@type":"Course","name":"Sprint Research com IA","description":"Descoberta de usuario em dias, nao em semanas.","provider":{"@type":"Organization","name":"Garage Criativa"},"hasCourseInstance":{"@type":"CourseInstance","courseMode":"blended","courseWorkload":"PT13H"}}},
+{"@type":"ListItem","position":3,"item":{"@type":"Course","name":"IA Service Design","description":"Redesenho de servico de ponta a ponta.","provider":{"@type":"Organization","name":"Garage Criativa"},"hasCourseInstance":{"@type":"CourseInstance","courseMode":"blended","courseWorkload":"PT13H"}}},
+{"@type":"ListItem","position":4,"item":{"@type":"Course","name":"AI Design Sprint","description":"Decisao com evidencia sobre uma aposta grande.","provider":{"@type":"Organization","name":"Garage Criativa"},"hasCourseInstance":{"@type":"CourseInstance","courseMode":"blended","courseWorkload":"PT21H"}}},
+{"@type":"ListItem","position":5,"item":{"@type":"Course","name":"Sprint Data-Driven com IA","description":"Do dado bruto ao diagnostico acionavel.","provider":{"@type":"Organization","name":"Garage Criativa"},"hasCourseInstance":{"@type":"CourseInstance","courseMode":"blended","courseWorkload":"PT13H"}}},
+{"@type":"ListItem","position":6,"item":{"@type":"Course","name":"Business Design com IA","description":"Modelo de negocio e viabilidade antes do capital.","provider":{"@type":"Organization","name":"Garage Criativa"},"hasCourseInstance":{"@type":"CourseInstance","courseMode":"blended","courseWorkload":"PT13H"}}},
+{"@type":"ListItem","position":7,"item":{"@type":"Course","name":"Sprint Strategic Plan com IA","description":"Do norte a execucao, com OKR auditado.","provider":{"@type":"Organization","name":"Garage Criativa"},"hasCourseInstance":{"@type":"CourseInstance","courseMode":"blended","courseWorkload":"PT21H"}}},
+{"@type":"ListItem","position":8,"item":{"@type":"Course","name":"Design de Futuros com IA","description":"Antecipacao de ruptura em horizonte de 3 a 10 anos.","provider":{"@type":"Organization","name":"Garage Criativa"},"hasCourseInstance":{"@type":"CourseInstance","courseMode":"blended","courseWorkload":"PT13H"}}},
+{"@type":"ListItem","position":9,"item":{"@type":"Course","name":"Lideranca de Produtos com IA","description":"Criterio de priorizacao que sobrevive a pressao.","provider":{"@type":"Organization","name":"Garage Criativa"},"hasCourseInstance":{"@type":"CourseInstance","courseMode":"blended","courseWorkload":"PT13H"}}},
+{"@type":"ListItem","position":10,"item":{"@type":"Course","name":"Gestao de Projetos com IA","description":"Escolha de abordagem e previsibilidade de entrega.","provider":{"@type":"Organization","name":"Garage Criativa"},"hasCourseInstance":{"@type":"CourseInstance","courseMode":"blended","courseWorkload":"PT13H"}}},
+{"@type":"ListItem","position":11,"item":{"@type":"Course","name":"Lideranca Agil com IA","description":"Formacao e conducao de times de alta performance.","provider":{"@type":"Organization","name":"Garage Criativa"},"hasCourseInstance":{"@type":"CourseInstance","courseMode":"blended","courseWorkload":"PT13H"}}}]}
+</script>
+"""
+
 PAGES = {
  "index.html": dict(page="home", brand=None, cta="#contato",
    title="Garage · Formação e consultoria em design de serviço | São Paulo",
@@ -152,34 +193,35 @@ PAGES = {
    title="Onze workshops in-company · Garage Criativa | São Paulo",
    ogtitle="Onze workshops in-company, em quatro trilhas",
    desc="Onze workshops in-company em quatro trilhas, no formato Três Tempos: design thinking, service design, design sprint, dados, business design, futuros, produto, projetos e liderança — com IA aplicada.",
-   canon=SITE+"/workshops", ogtype="website"),
+   canon=SITE+"/workshops.html", ogtype="website", schema=COURSE_LIST),
  "hub.html": dict(page="hub", brand="hub", cta="#contato",
    title="Consultoria de design de serviço · Garage Hub | São Paulo",
    ogtitle="Garage Hub · consultoria de design de serviço",
    desc="Mapeamos a jornada, localizamos onde o serviço quebra, redesenhamos o modelo operacional em service blueprint e acompanhamos a implementação com o time do cliente conduzindo.",
-   canon=SITE+"/hub", ogtype="website"),
+   canon=SITE+"/hub.html", ogtype="website", schema=SERVICE_HUB),
  "cases.html": dict(page="cases", brand="hub", cta="index.html#contato",
    title="Cases · projetos entregues | Garage",
    ogtitle="Cases · projetos entregues pela Garage",
    desc="Projetos de redesenho de serviço entregues pela Garage em saúde, imobiliário, financeiro, indústria e logística — com o desafio recebido, a condução e o que mudou depois.",
-   canon=SITE+"/cases", ogtype="website"),
+   canon=SITE+"/cases.html", ogtype="website"),
  "case-inrad.html": dict(page="cases", brand="hub", cta="index.html#contato",
    title="Jornada do paciente em tomografia e mamografia · INRAD HCFMUSP | Garage Hub",
    ogtitle="Case INRAD · HCFMUSP — jornada do paciente",
    desc="Case Garage Hub no INRAD do HCFMUSP: mapeamento da jornada do paciente em tomografia e mamografia, do agendamento à saída, com personas e pontos de oportunidade.",
-   canon=SITE+"/cases/inrad-jornada-do-paciente", ogtype="article"),
+   canon=SITE+"/case-inrad.html", ogtype="article"),
  "sistema.html": dict(page=None, brand=None, cta="index.html#contato",
    title="Sistema de design · Garage",
    ogtitle="Sistema de design · Garage",
    desc="Tokens, componentes, padrões e sistema de movimento do site da Garage. Documentação viva do design system.",
-   canon=SITE+"/sistema", ogtype="website"),
+   canon=SITE+"/sistema.html", ogtype="website", robots=ROBOTS_NOINDEX),
 }
 
 def rebuild(fn, main_html):
     cfg = PAGES[fn]
     head = HEAD_TPL.format(title=cfg["title"], desc=cfg["desc"], canon=cfg["canon"],
                            ogtitle=cfg["ogtitle"], ogtype=cfg["ogtype"], site=SITE,
-                           schema=cfg.get("schema", ""))
+                           schema=cfg.get("schema", ""),
+                           robots=cfg.get("robots", ""))
     body_attr = ' data-brand="%s"' % cfg["brand"] if cfg["brand"] else ""
     return head + "<body%s>\n" % body_attr + header(cfg["page"], cfg["cta"]) + "\n" + main_html + "\n" + footer()
 
