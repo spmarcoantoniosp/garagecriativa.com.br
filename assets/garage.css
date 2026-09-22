@@ -31,6 +31,7 @@
   --hub:#FFAA32;
   --hub-deep:#9C5233;     /* superfície: aceita texto branco (5.72) */
   --hub-lt:#FFCC84;
+  --lab:#0FA97F;         /* Garage Labs: verde da loja, aberto para fundo escuro */
 
   /* mesa de leitura */
   --paper:#F5F1ED;
@@ -674,3 +675,13 @@ p{margin:0 0 1.05em}
 /* contato: duas portas em vez de rótulos de formulário */
 .contato__doors{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
 .contato__doors .btn{flex:1 1 auto;justify-content:center;text-align:center}
+
+/* ---------- menu: uma cor por mundo ---------- */
+/* Criativa, Hub e a loja são coisas diferentes; o menu diz isso antes da leitura. */
+.nav__links a[data-w="cri"],.nav__panel a[data-w="cri"]{color:var(--cri);--w:var(--cri)}
+.nav__links a[data-w="hub"],.nav__panel a[data-w="hub"]{color:var(--hub);--w:var(--hub)}
+.nav__links a[data-w="lab"],.nav__panel a[data-w="lab"]{color:var(--lab);--w:var(--lab)}
+/* estado: o branco marca "você está aqui"; o fio embaixo mantém a cor do mundo */
+.nav__links a[data-w]:hover,.nav__links a[data-w][aria-current="page"]{
+  color:var(--paper);border-bottom-color:var(--w)}
+.nav__panel a[data-w][aria-current="page"]{color:var(--paper)}
